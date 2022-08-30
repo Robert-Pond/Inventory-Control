@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact name="Inventory Control">
+    <output-path>$PROJECT_DIR$/out/artifacts/Inventory_Control</output-path>
+    <root id="root">
+      <element id="archive" name="Inventory Control.jar">
+        <element id="module-output" name="Inventory Control" />
+      </element>
+      <element id="library" level="project" name="lib" />
+    </root>
+  </artifact>
+</component>

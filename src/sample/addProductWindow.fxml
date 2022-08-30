@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane fx:id="mainAnchorPane" prefHeight="573.0" prefWidth="852.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AddProductWindow">
+   <children>
+      <HBox prefHeight="675.0" prefWidth="922.0">
+         <children>
+            <VBox prefHeight="708.0" prefWidth="462.0">
+               <children>
+                  <HBox prefHeight="180.0" prefWidth="409.0">
+                     <children>
+                        <Label text="Add Product">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="297.0" prefWidth="393.0">
+                     <children>
+                        <VBox prefHeight="297.0" prefWidth="112.0" spacing="23.0">
+                           <children>
+                              <Label text="ID">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="50.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="Name">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="50.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="Inv">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="50.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="Price">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="50.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="Max">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="50.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="297.0" prefWidth="142.0" spacing="33.0">
+                           <children>
+                              <TextField fx:id="newProductID" disable="true" editable="false" text="Auto Gen - Disabled">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="newProductName" />
+                              <TextField fx:id="newProductStock" />
+                              <TextField fx:id="newProductPrice" />
+                              <TextField fx:id="newProductMax" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="297.0" prefWidth="43.0">
+                           <children>
+                              <Region prefHeight="241.0" prefWidth="45.0" />
+                              <Label text="Min">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="297.0" prefWidth="126.0">
+                           <children>
+                              <Region prefHeight="243.0" prefWidth="124.0" />
+                              <TextField fx:id="newProductMin" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <TextFlow fx:id="addProductErrorBox" prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </VBox>
+            <VBox prefHeight="573.0" prefWidth="432.0">
+               <children>
+                  <HBox prefHeight="51.0" prefWidth="432.0">
+                     <children>
+                        <Region prefHeight="204.0" prefWidth="272.0" />
+                        <TextField fx:id="partSearchBox" onAction="#partSearchBoxUsed" prefHeight="25.0" prefWidth="193.0" promptText="Search by Part ID or Name">
+                           <HBox.margin>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="227.0" prefWidth="432.0">
+                     <children>
+                        <TableView fx:id="fullPartTableView" prefHeight="227.0" prefWidth="432.0">
+                          <columns>
+                            <TableColumn fx:id="fullPartID" prefWidth="75.0" text="Part ID" />
+                            <TableColumn fx:id="fullPartName" prefWidth="101.0" text="Part Name" />
+                              <TableColumn fx:id="fullPartStock" prefWidth="126.0" text="Inventory Level" />
+                              <TableColumn fx:id="fullPartPrice" prefWidth="126.0" text="Price/ Cost per Unit" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="45.0" prefWidth="432.0">
+                     <children>
+                        <Region prefHeight="45.0" prefWidth="367.0" />
+                        <Button mnemonicParsing="false" onAction="#addPartToNewProductButtonPress" text="Add">
+                           <HBox.margin>
+                              <Insets top="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="associatedPartTableView" prefHeight="227.0" prefWidth="432.0">
+                     <columns>
+                        <TableColumn fx:id="associatedPartID" prefWidth="75.0" text="Part ID" />
+                        <TableColumn fx:id="associatedPartName" prefWidth="101.0" text="Part Name" />
+                        <TableColumn fx:id="associatedPartStock" prefWidth="126.0" text="Inventory Level" />
+                        <TableColumn fx:id="associatedPartPrice" prefWidth="126.0" text="Price/ Cost per Unit" />
+                     </columns>
+                  </TableView>
+                  <HBox prefHeight="55.0" prefWidth="432.0">
+                     <children>
+                        <Region prefHeight="55.0" prefWidth="284.0" />
+                        <Button mnemonicParsing="false" onAction="#removeAssociatedPartButtonPress" text="Remove Associated Part">
+                           <HBox.margin>
+                              <Insets top="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="55.0" prefWidth="432.0" spacing="10.0">
+                     <children>
+                        <Region prefHeight="55.0" prefWidth="283.0" />
+                        <Button mnemonicParsing="false" onAction="#addProductSaveButtonPress" text="Save">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#cancelProductButtonPress" text="Cancel" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

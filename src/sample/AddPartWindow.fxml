@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="443.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AddPartWindow">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <HBox prefHeight="86.0" prefWidth="600.0" spacing="20.0">
+               <children>
+                  <Label text="Add Part">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <RadioButton fx:id="inHouseRadioButton" mnemonicParsing="false" onAction="#radioButtonChanged" selected="true" text="In-House">
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </RadioButton>
+                  <RadioButton fx:id="outsourcedRadioButton" mnemonicParsing="false" onAction="#radioButtonChanged" prefHeight="28.0" prefWidth="154.0" text="Outsourced">
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </RadioButton>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="208.0" prefWidth="600.0">
+               <children>
+                  <VBox prefHeight="372.0" prefWidth="111.0">
+                     <children>
+                        <Label text="ID">
+                           <VBox.margin>
+                              <Insets left="10.0" top="15.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Name">
+                           <VBox.margin>
+                              <Insets left="10.0" top="15.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Inv">
+                           <VBox.margin>
+                              <Insets left="10.0" top="15.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Price/Cost">
+                           <VBox.margin>
+                              <Insets left="10.0" top="15.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Max">
+                           <VBox.margin>
+                              <Insets left="10.0" top="15.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="partType" text="Machine ID">
+                           <VBox.margin>
+                              <Insets left="10.0" top="15.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="372.0" prefWidth="175.0" spacing="3.0">
+                     <children>
+                        <TextField disable="true" editable="false" text="AutoGen-Disabled">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="newPartName">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="newPartStock">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="newPartCost">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="newPartMax">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="newPartSpecial">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="372.0" prefWidth="262.0">
+                     <children>
+                        <Region prefHeight="125.0" prefWidth="262.0" />
+                        <HBox prefHeight="54.0" prefWidth="262.0">
+                           <children>
+                              <Label prefHeight="27.0" prefWidth="45.0" text="Min">
+                                 <HBox.margin>
+                                    <Insets left="10.0" top="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="newPartMin" prefHeight="25.0" prefWidth="175.0">
+                                 <HBox.margin>
+                                    <Insets top="12.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <TextFlow fx:id="addErrorBox" prefHeight="90.0" prefWidth="381.0">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </TextFlow>
+                  <Region prefHeight="100.0" prefWidth="14.0" />
+                  <Button mnemonicParsing="false" onAction="#addPartButtonPressed" text="Save">
+                     <HBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#addPartCancelButtonPress" text="Cancel">
+                     <HBox.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
